@@ -1,0 +1,11 @@
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        result = len(temperatures) * [0] 
+        for i in range(len(temperatures)):
+            j = i 
+            while j < len(temperatures):
+                if temperatures[j] > temperatures[i]:
+                    result[i] = (j-i)
+                    break
+                j += 1
+        return result                
